@@ -15,7 +15,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     let avPlayerViewController = AVPlayerViewController();
     var avPlayer: AVPlayer?
     var avplayerlayer: AVPlayerLayer = AVPlayerLayer()
-    var inputText: String = String()
+    var inputText: String = "Demo1_1"
     
     @IBOutlet weak var inputTextField: UITextField!
     
@@ -24,24 +24,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let movieUrl: NSURL? = NSURL(string: "http://cspc.sogang.ac.kr/~yjlee127/capstone/Schedule_Demo_1.mp4")
-        
-        //optional binding. movieUrl이 실제로 있는 url인지 확인하기 위함
-        if let url = movieUrl {
-            self.avPlayer = AVPlayer(URL: url)//AVPlayer object를 만듦
-            avplayerlayer = AVPlayerLayer(player: self.avPlayer)
-            avplayerlayer.frame = videoView.bounds
-
-            avplayerlayer.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width*0.85, height: self.view.frame.size.width*0.5)
-            
-            avplayerlayer.videoGravity = AVLayerVideoGravityResizeAspect
-            avplayerlayer.needsDisplayOnBoundsChange = true
-            
-            videoView.layer.addSublayer(avplayerlayer)
-            videoView.layer.needsDisplayOnBoundsChange = true
-            
-            self.avPlayerViewController.player = self.avplayerlayer.player
-        }
+        playMovie()
         
         self.inputTextField.delegate = self
  
@@ -80,7 +63,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
         inputText = text
         playMovie()
-        
+        self.avPlayer?.play()
     }
 
     /* movie play function */
@@ -98,7 +81,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             avplayerlayer = AVPlayerLayer(player: self.avPlayer)
             avplayerlayer.frame = videoView.bounds
             
-            avplayerlayer.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width*0.85, height: self.view.frame.size.width*0.5)
+            avplayerlayer.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width*0.85, height: self.view.frame.size.width*0.6)
             
             avplayerlayer.videoGravity = AVLayerVideoGravityResizeAspect
             avplayerlayer.needsDisplayOnBoundsChange = true
@@ -107,6 +90,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             videoView.layer.needsDisplayOnBoundsChange = true
             
             self.avPlayerViewController.player = self.avplayerlayer.player
+            
         }
     }
     
