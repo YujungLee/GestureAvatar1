@@ -15,6 +15,11 @@
 		8EB2A77A1D1829790075361F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EB2A7781D1829790075361F /* LaunchScreen.storyboard */; };
 		8EB2A7851D1829790075361F /* GestureAvatar10Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB2A7841D1829790075361F /* GestureAvatar10Tests.swift */; };
 		8EB2A7901D1829790075361F /* GestureAvatar10UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB2A78F1D1829790075361F /* GestureAvatar10UITests.swift */; };
+		8EB2A79F1D1830090075361F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EB2A79D1D1830090075361F /* AVFoundation.framework */; };
+		8EB2A7A01D1830090075361F /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EB2A79E1D1830090075361F /* AVKit.framework */; };
+		8EB2A7A21D1835760075361F /* Schedule_Demo_1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8EB2A7A11D1835760075361F /* Schedule_Demo_1.mp4 */; };
+		8EB2A7A31D1835760075361F /* Schedule_Demo_1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8EB2A7A11D1835760075361F /* Schedule_Demo_1.mp4 */; };
+		8EB2A7A41D1835760075361F /* Schedule_Demo_1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8EB2A7A11D1835760075361F /* Schedule_Demo_1.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,9 @@
 		8EB2A78B1D1829790075361F /* GestureAvatar10UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GestureAvatar10UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EB2A78F1D1829790075361F /* GestureAvatar10UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureAvatar10UITests.swift; sourceTree = "<group>"; };
 		8EB2A7911D1829790075361F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8EB2A79D1D1830090075361F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		8EB2A79E1D1830090075361F /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		8EB2A7A11D1835760075361F /* Schedule_Demo_1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Schedule_Demo_1.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EB2A79F1D1830090075361F /* AVFoundation.framework in Frameworks */,
+				8EB2A7A01D1830090075361F /* AVKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +89,8 @@
 		8EB2A7601D1829790075361F = {
 			isa = PBXGroup;
 			children = (
+				8EB2A79D1D1830090075361F /* AVFoundation.framework */,
+				8EB2A79E1D1830090075361F /* AVKit.framework */,
 				8EB2A76B1D1829790075361F /* GestureAvatar10 */,
 				8EB2A7831D1829790075361F /* GestureAvatar10Tests */,
 				8EB2A78E1D1829790075361F /* GestureAvatar10UITests */,
@@ -99,6 +111,7 @@
 		8EB2A76B1D1829790075361F /* GestureAvatar10 */ = {
 			isa = PBXGroup;
 			children = (
+				8EB2A7A11D1835760075361F /* Schedule_Demo_1.mp4 */,
 				8EB2A76C1D1829790075361F /* AppDelegate.swift */,
 				8EB2A76E1D1829790075361F /* ViewController.swift */,
 				8EB2A7701D1829790075361F /* Main.storyboard */,
@@ -235,6 +248,7 @@
 				8EB2A77A1D1829790075361F /* LaunchScreen.storyboard in Resources */,
 				8EB2A7771D1829790075361F /* Assets.xcassets in Resources */,
 				8EB2A7721D1829790075361F /* Main.storyboard in Resources */,
+				8EB2A7A21D1835760075361F /* Schedule_Demo_1.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +256,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EB2A7A31D1835760075361F /* Schedule_Demo_1.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +264,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EB2A7A41D1835760075361F /* Schedule_Demo_1.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
