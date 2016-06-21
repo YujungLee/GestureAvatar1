@@ -81,7 +81,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             avplayerlayer = AVPlayerLayer(player: self.avPlayer)
             avplayerlayer.frame = videoView.bounds
             
-            avplayerlayer.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width*0.85, height: self.view.frame.size.width*0.6)
+            avplayerlayer.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width*0.85, height: self.view.frame.size.width*0.9)
             
             avplayerlayer.videoGravity = AVLayerVideoGravityResizeAspect
             avplayerlayer.needsDisplayOnBoundsChange = true
@@ -95,6 +95,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     
+    @IBAction func startButtonTapped(sender: AnyObject) {
+        inputText = "Demo1_1"
+        playMovie()
+        self.avPlayer?.play()
+    }
     
+    @IBAction func endButtonTapped(sender: AnyObject) {
+        inputText = "Demo2_4"
+        playMovie()
+        self.avPlayer?.play()
+    }
 }
 
