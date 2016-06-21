@@ -23,11 +23,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //let urlPathString:String? = NSBundle.mainBundle().pathForResource("Schedule_Demo_1", ofType: "mp4" )//local video
-        
-       // let serverString: String = "http://cspc.sogang.ac.kr/~yjlee127/capstone/"
-       // let movieString: String = serverString + inputText + ".mp4"
-       // let movieUrl: NSURL? = NSURL(string: movieString)
+
         let movieUrl: NSURL? = NSURL(string: "http://cspc.sogang.ac.kr/~yjlee127/capstone/Schedule_Demo_1.mp4")
         
         //optional binding. movieUrl이 실제로 있는 url인지 확인하기 위함
@@ -44,13 +40,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
             videoView.layer.addSublayer(avplayerlayer)
             videoView.layer.needsDisplayOnBoundsChange = true
             
-            self.avPlayerViewController.player = self.avPlayer
+            self.avPlayerViewController.player = self.avplayerlayer.player
         }
+        
+        self.inputTextField.delegate = self
  
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        print("Memory.....is .....*Dead*")
         // Dispose of any resources that can be recreated.
     }
 
@@ -80,12 +79,38 @@ class ViewController: UIViewController, UITextFieldDelegate {
             return
         }
         inputText = text
+        playMovie()
         
     }
 
     /* movie play function */
     func playMovie() {
         
+         let serverString: String = "http://cspc.sogang.ac.kr/~yjlee127/capstone/"
+         let movieString: String = serverString + inputText + ".mp4"
+         let movieUrl: NSURL? = NSURL(string: movieString)
+        print(movieUrl)
+
+        
+        //optional binding. movieUrl이 실제로 있는 url인지 확인하기 위함
+        if let url = movieUrl {
+            self.avPlayer = AVPlayer(URL: url)
+            avplayerlayer = AVPlayerLayer(player: self.avPlayer)
+            avplayerlayer.frame = videoView.bounds
+            
+            avplayerlayer.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width*0.85, height: self.view.frame.size.width*0.5)
+            
+            avplayerlayer.videoGravity = AVLayerVideoGravityResizeAspect
+            avplayerlayer.needsDisplayOnBoundsChange = true
+            
+            videoView.layer.addSublayer(avplayerlayer)
+            videoView.layer.needsDisplayOnBoundsChange = true
+            
+            self.avPlayerViewController.player = self.avplayerlayer.player
+        }
     }
+    
+    
+    
 }
 
