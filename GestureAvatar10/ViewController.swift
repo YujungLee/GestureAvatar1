@@ -17,6 +17,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var avplayerlayer: AVPlayerLayer = AVPlayerLayer()
     var inputText: String = "Demo1_1"
     var endFlag: Bool = false//비디오가 끝났는지 표시하는 플래그, true이면 끝난것
+    var questionFlag: Bool = false//방금 재생한 제스쳐가 변경질문 혹은 삭제질문일 경우 true, 아닐 경우 false
+    let questionDict: [String:String] = ["점심 1시로":"Demo1_2", "치매 일정 취소":"Demo2_2"]
+    let answerDict: [String:String] = ["점심 1시로":"Demo1_3", "치매 일정 취소":"Demo2_3"]
+    var prevQuestion: String = String()
+    
     
     @IBOutlet weak var inputTextField: UITextField!
     
@@ -83,9 +88,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
     /* movie play function */
     func playMovie() {
         
-         let serverString: String = "http://cspc.sogang.ac.kr/~yjlee127/capstone/"
-         let movieString: String = serverString + inputText + ".mp4"
-         let movieUrl: NSURL? = NSURL(string: movieString)
+        let serverString: String = "http://cspc.sogang.ac.kr/~yjlee127/capstone/"
+        var videoName : String = "Demo1_1"
+        videoName = findVideo()
+        
+        let movieString: String = serverString + videoName + ".mp4"
+        let movieUrl: NSURL? = NSURL(string: movieString)
         
         //debug
         print(movieUrl)
@@ -118,13 +126,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func startButtonTapped(sender: AnyObject) {
-        inputText = "Demo1_1"
+        inputText = "start"
         playMovie()
         self.avPlayer?.play()
     }
     
     @IBAction func endButtonTapped(sender: AnyObject) {
-        inputText = "Demo2_4"
+        inputText = "end"
         playMovie()
         self.avPlayer?.play()
     }
@@ -146,6 +154,46 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.avPlayer?.play()
     }
     
+    
+    func findVideo() -> String {
+        if inputText == "start"{
+            return "Demo1_1"
+        }
+        else if inputText == "end"
+        {
+            return "Demo2_4"
+        }
+        
+        if questionFlag == false{
+            let videoName = questionDict[inputText]
+            if videoName != nil{
+                questionFlag = true
+                prevQuestion = inputText
+                return videoName!
+            }
+            else{
+                return "pardon"
+            }
+        }
+        else{
+            questionFlag = false
+            if inputText == "응"{
+                let videoName = answerDict[prevQuestion]
+                if videoName != nil{
+                    return videoName!
+                }
+                else{
+                    return "pardon"
+                }
+            }
+            else if inputText == "아니"{
+                return "YesIKnow"
+            }
+            else {
+                return "pardon"
+            }
+        }
+    }
     
 }
 
