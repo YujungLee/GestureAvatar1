@@ -16,12 +16,58 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="opening" translatesAutoresizingMaskIntoConstraints="NO" id="AOz-xG-uqJ">
+                                <rect key="frame" x="0.0" y="-1334" width="750" height="1334"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="800" id="Q6H-b1-QBg"/>
+                                    <constraint firstAttribute="width" constant="400" id="da7-2W-d1n"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Q6H-b1-QBg"/>
+                                        <exclude reference="da7-2W-d1n"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Q6H-b1-QBg"/>
+                                        <include reference="da7-2W-d1n"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="AOz-xG-uqJ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Lbt-0N-s3d"/>
+                            <constraint firstItem="AOz-xG-uqJ" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="p60-vg-9Me"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="AOz-xG-uqJ"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="Lbt-0N-s3d"/>
+                                <exclude reference="p60-vg-9Me"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="AOz-xG-uqJ"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="Lbt-0N-s3d"/>
+                                <include reference="p60-vg-9Me"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.5" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="opening" width="750" height="1334"/>
+    </resources>
 </document>

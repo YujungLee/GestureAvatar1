@@ -504,6 +504,7 @@
 				8EB2A7961D1829790075361F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8EB2A7971D1829790075361F /* Build configuration list for PBXNativeTarget "GestureAvatar10Tests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +513,7 @@
 				8EB2A7991D1829790075361F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8EB2A79A1D1829790075361F /* Build configuration list for PBXNativeTarget "GestureAvatar10UITests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +522,7 @@
 				8EB2A79C1D1829790075361F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
